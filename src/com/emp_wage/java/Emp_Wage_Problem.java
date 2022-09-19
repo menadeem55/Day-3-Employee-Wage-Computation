@@ -5,6 +5,7 @@ import java.util.Random;
 public class Emp_Wage_Problem {
 
 	public static void main(String[] args) {
+
 		System.out.println("Welcome to Employee Wage Computation Program");
 
 		Random random = new Random();
@@ -13,28 +14,39 @@ public class Emp_Wage_Problem {
 		int fullDayHrs = 8;
 		int halfDaysHrs = 4;
 		int salary = 0;
+		int monthlySalary = 0;
+		int workingDaysPerMonth = 20;
 
-		int randomNum = random.nextInt(3);
+		for (int i = 1; i <= workingDaysPerMonth; i++) {
 
-		switch (randomNum) {
-		case 0:
-			
-			System.out.println("Employee is Absent");
-			break;
+			int randomNum = random.nextInt(3);
 
-		case 1:
-			
-			System.out.println("Employee is Present");
-				salary = wagePerHrs * fullDayHrs;
-			break;
+			switch (randomNum) {
+			case 0:
 
-		case 2:
-			System.out.println("Employee is Present for Half Day");
-				salary = wagePerHrs * halfDaysHrs;
+				System.out.println("Employee is Absent");
 				break;
-		}
 
-		System.out.println("Salary is: " + salary);
+			case 1:
+
+				System.out.println("Employee is Present");
+				salary = wagePerHrs * fullDayHrs;
+				break;
+
+			case 2:
+				System.out.println("Employee is Present for Half Day");
+				salary = wagePerHrs * halfDaysHrs;
+				
+
+			}
+
+			
+			monthlySalary = monthlySalary + salary;
+			System.out.println("Salary is: " + salary);
+			
+		}
+			System.out.println("monthly salary: "+ monthlySalary);
+			
 
 //				if(randomNum == 1)
 //				{	
